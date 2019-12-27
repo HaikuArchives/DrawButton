@@ -54,7 +54,7 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS =  libbe.so /boot/system/lib/libstdc++.so libtextencoding.so libtracker.so /boot/system/develop/lib/x86/libsupc++.so
+LIBS =  be $(STDCPPLIBS) textencoding tracker supc++
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
