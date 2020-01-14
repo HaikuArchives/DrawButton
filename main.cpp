@@ -1,6 +1,3 @@
-/* This code is written for BeOS R5. To use it under R4 please change the lines, 
-where the icon is fetched!!! */
-
 #include <Application.h>
 #include <Window.h>
 #include <View.h>
@@ -11,16 +8,13 @@ where the icon is fetched!!! */
 
 #include "DrawButton.h"
 
-/* ------------ Declarations of the Window class ------------ */
-
 class Window : public BWindow {
 	public:
 				Window();
 		bool	QuitRequested() { be_app->PostMessage(B_QUIT_REQUESTED); return true; };
 };
 
-/* --------------- Main program --------------------------- */
-
+// Main program
 int main() {
 
 	BApplication	myApp("application/x-vnd.pecora-testapp");
@@ -32,8 +26,7 @@ int main() {
 	return 0;
 }
 
-/* ------------- Window Functions --------- */
-
+// Window Functions
 Window::Window() :
 	BWindow( BRect( 40, 40, 123, 123), "Demo App", B_TITLED_WINDOW, B_NOT_ZOOMABLE|B_NOT_RESIZABLE) {
 
@@ -63,7 +56,7 @@ Window::Window() :
 	tempView.SetDrawingMode(B_OP_OVER);
 	tempView.DrawBitmapAsync( &Icon, BPoint(6, 6) );
 
-// uncomment the following lines to receive a disabled look:
+// uncomment the following lines to get a disabled look:
 
 //	tempView.SetHighColor(232, 232, 232, 108);
 //	tempView.SetDrawingMode(B_OP_ALPHA);
@@ -93,6 +86,6 @@ Window::Window() :
 	// Remove the temporary view
 	RemoveChild( &tempView);
 	
-	// And open the Window
+	// Finally, show the window
 	Show(); 
 }

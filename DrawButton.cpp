@@ -1,5 +1,3 @@
-/* --------------- Please read the information in "DrawButton.h"! --------------- */
-
 #include "DrawButton.h"
 
 void	DrawButton(BView *view, BRect frame, bool pressed) {
